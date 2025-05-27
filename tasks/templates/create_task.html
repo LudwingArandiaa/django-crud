@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container">
+  <section class="row">
+    <div class="col-md-4 offset-md-4 mt-5">
+      <form action="{% url 'create_task' %}" method="POST" class="card card-body">
+        {% csrf_token %}
+        <h1 class="text-center display-3">Create Task</h1>
+        {{ error }}
+        {{ form.as_p }}
+        <button class="btn btn-primary">
+          Save
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+
+{% endblock %}
